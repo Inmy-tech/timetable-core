@@ -1,0 +1,27 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd"
+        logicalFilePath="01-initial-agents.xml">
+
+    <changeSet id="01" author="il_mikhaylov" context="prod">
+        <sql>
+            create table events
+            (
+            event_id serial not null,
+            event_name varchar(200) not null,
+            event_datetime timestamp not null
+            );
+
+            create unique index events_event_id_uindex
+            on events (event_id);
+
+            alter table events
+            add constraint events_pk
+            primary key (event_id);
+        </sql>
+        <rollback>
+            drop table events;
+        </rollback>
+    </changeSet>
+</databaseChangeLog>
