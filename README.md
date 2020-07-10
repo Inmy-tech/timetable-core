@@ -19,3 +19,6 @@ So I decided to create such solution by myself.
 * AWS
 * ReactJs
 * OAuth2
+
+## Database:
+run `docker run --name timetable-postgres -p 5432:5432 -v /timetable/postgres/core/data:/var/lib/postgresql/data -e POSTGRES_USER=timetable -e POSTGRES_DB=timetable -e POSTGRES_PASSWORD=timetable -d postgres:12.3-alpine`
