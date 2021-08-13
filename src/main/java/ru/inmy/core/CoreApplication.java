@@ -11,5 +11,4 @@ public class CoreApplication {
         ReactorDebugAgent.init();
         SpringApplication.run(CoreApplication.class, args);
     }
-
 }
