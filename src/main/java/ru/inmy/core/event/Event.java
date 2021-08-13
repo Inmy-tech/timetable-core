@@ -17,7 +17,9 @@ public class Event {
 
     @Id
     private Long eventId;
+
     private String eventName;
+
     @Column("event_datetime")  
     private LocalDateTime eventDateTime;
 }
